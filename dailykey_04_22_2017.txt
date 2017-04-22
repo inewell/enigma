@@ -1,0 +1,213 @@
+Enigma Machine Daily Key Settings
+Daily Key Settings for 30 days starting 04/22/2017
+
+Day 1 (04/22/2017)
+Rotors:    II VII VI
+Reflector: A
+Ring:      18 26 23
+Ground:    D S O
+Plugs:     AD BL FE HQ IU JX KW NS OR ZT
+
+Day 2 (04/23/2017)
+Rotors:    VIII I VII
+Reflector: B
+Ring:      14 02 26
+Ground:    U L Z
+Plugs:     FS HG IU KB LJ ME OY QZ VX WR
+
+Day 3 (04/24/2017)
+Rotors:    VI IV II
+Reflector: C
+Ring:      10 05 15
+Ground:    S V G
+Plugs:     AF BQ HZ LU NM RO TV WS XE YC
+
+Day 4 (04/25/2017)
+Rotors:    I VIII V
+Reflector: B
+Ring:      02 25 15
+Ground:    T N G
+Plugs:     AP BY CI DS EW FX KQ LN RM VT
+
+Day 5 (04/26/2017)
+Rotors:    I IV V
+Reflector: A
+Ring:      23 04 14
+Ground:    I O H
+Plugs:     BF CZ HN IA KW LU OG TJ VX YD
+
+Day 6 (04/27/2017)
+Rotors:    VIII II V
+Reflector: A
+Ring:      17 12 26
+Ground:    Z I T
+Plugs:     AI BV DE GJ KY MT OH PW XS ZU
+
+Day 7 (04/28/2017)
+Rotors:    VI VII III
+Reflector: A
+Ring:      07 14 19
+Ground:    A M I
+Plugs:     HA KE NM PQ RY ST VJ WG XC ZB
+
+Day 8 (04/29/2017)
+Rotors:    I VII II
+Reflector: A
+Ring:      17 04 19
+Ground:    G Z G
+Plugs:     FD LG MU NK OS QX TR VC WZ YA
+
+Day 9 (04/30/2017)
+Rotors:    VI I III
+Reflector: A
+Ring:      03 05 18
+Ground:    K L Q
+Plugs:     AQ EC JO MS NK RD TX VU WH YI
+
+Day 10 (05/01/2017)
+Rotors:    VI I VII
+Reflector: C
+Ring:      09 23 09
+Ground:    U V Z
+Plugs:     AS DM EH FB JG KZ OL QY TI VP
+
+Day 11 (05/02/2017)
+Rotors:    III I VI
+Reflector: C
+Ring:      01 20 07
+Ground:    O R F
+Plugs:     BU CT DA GH MR OJ SP WL YK ZE
+
+Day 12 (05/03/2017)
+Rotors:    VIII II VII
+Reflector: C
+Ring:      12 09 18
+Ground:    A X N
+Plugs:     AN BZ GU HT KO LE MF PJ SQ VW
+
+Day 13 (05/04/2017)
+Rotors:    III VIII I
+Reflector: B
+Ring:      23 25 05
+Ground:    O R L
+Plugs:     AP FB GH JT KE LD MS RW VI YC
+
+Day 14 (05/05/2017)
+Rotors:    V VIII VII
+Reflector: A
+Ring:      03 19 21
+Ground:    Z Q U
+Plugs:     BY DS FA IR JN LZ MG PT VU XH
+
+Day 15 (05/06/2017)
+Rotors:    III IV VII
+Reflector: C
+Ring:      23 22 22
+Ground:    I D U
+Plugs:     BT CL FD HE IG OA QX RK VY WP
+
+Day 16 (05/07/2017)
+Rotors:    VIII I II
+Reflector: C
+Ring:      03 10 05
+Ground:    B Y L
+Plugs:     AH EO IR JN KG MF UQ XT YB ZL
+
+Day 17 (05/08/2017)
+Rotors:    VII IV V
+Reflector: A
+Ring:      19 07 04
+Ground:    T B F
+Plugs:     DT HZ IC JP KA LG QX RF UM YV
+
+Day 18 (05/09/2017)
+Rotors:    VIII VII V
+Reflector: B
+Ring:      13 20 22
+Ground:    I S Y
+Plugs:     CU EI JM NA PF QL RD TS VG YZ
+
+Day 19 (05/10/2017)
+Rotors:    VII I VIII
+Reflector: A
+Ring:      04 10 10
+Ground:    I X G
+Plugs:     CH FA JQ LM RB SZ UG VI WK XP
+
+Day 20 (05/11/2017)
+Rotors:    VIII VII II
+Reflector: A
+Ring:      10 22 05
+Ground:    B R Y
+Plugs:     BG DX EY IC JW KQ MS NV PH RT
+
+Day 21 (05/12/2017)
+Rotors:    VI VII VIII
+Reflector: A
+Ring:      09 25 06
+Ground:    P Y U
+Plugs:     AY CJ DW GI HM NF SR TP UB VK
+
+Day 22 (05/13/2017)
+Rotors:    VII IV I
+Reflector: A
+Ring:      26 20 09
+Ground:    B L W
+Plugs:     BX CA DI FW HQ JN LZ SG TO YM
+
+Day 23 (05/14/2017)
+Rotors:    II V IV
+Reflector: A
+Ring:      21 22 09
+Ground:    Q Y K
+Plugs:     GC HI KF LQ OD PS RB TY VM ZA
+
+Day 24 (05/15/2017)
+Rotors:    VIII VII VI
+Reflector: C
+Ring:      23 25 24
+Ground:    G H M
+Plugs:     AU CW DN EQ JI MS OH PK TY VX
+
+Day 25 (05/16/2017)
+Rotors:    I III V
+Reflector: A
+Ring:      26 08 25
+Ground:    M D V
+Plugs:     GB LY NM PQ RV SE TX UJ WF ZK
+
+Day 26 (05/17/2017)
+Rotors:    I III VIII
+Reflector: B
+Ring:      19 20 20
+Ground:    G B G
+Plugs:     EL FB KJ QA RM TS VN WO YC ZP
+
+Day 27 (05/18/2017)
+Rotors:    VIII I III
+Reflector: A
+Ring:      13 26 13
+Ground:    F C A
+Plugs:     KW LS ME NO PG QB RI XC YH ZV
+
+Day 28 (05/19/2017)
+Rotors:    VIII I III
+Reflector: A
+Ring:      23 18 25
+Ground:    A I N
+Plugs:     CB EW FZ HN KI OJ QA SP XU YM
+
+Day 29 (05/20/2017)
+Rotors:    III V VIII
+Reflector: C
+Ring:      05 04 07
+Ground:    V D H
+Plugs:     AL EO IS JU KY MQ NB RD WV ZH
+
+Day 30 (05/21/2017)
+Rotors:    II VI VIII
+Reflector: A
+Ring:      07 22 16
+Ground:    Y T T
+Plugs:     BM CD EZ FN HI OA SK UP WT YQ
+
