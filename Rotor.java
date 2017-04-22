@@ -1,9 +1,20 @@
+/* Project Title: Enigma
+* Description: This emulates the rotor component.
+*
+* Created by: Isaac Newell
+* Date: 04/22/2017
+*/
+
 public class Rotor
 {
+  // Output of the rotor
   private final String out;
+  // Reverse output of the rotor (useful for coming back through rotors)
   private final String revOut;
+  // Location of turnover notch(es)
   private final String notches;
 
+  // Actual wirings of rotors I-VIII
   public static final Rotor I = new Rotor("EKMFLGDQVZNTOWYHXUSPAIBRCJ", "R");
   public static final Rotor II = new Rotor("AJDKSIRUXBLHWTMCQGZNPYFVOE", "F");
   public static final Rotor III = new Rotor("BDFHJLCPRTXVZNYEIWGAKMUSQO", "W");
@@ -19,6 +30,8 @@ public class Rotor
     this.out = out;
     this.notches = notches;
 
+    // Create the reverse mapping, so as to not have to do it every time
+    //    Traversing the rotors in the reverse direction
     char[] revList = new char[26];
     for (int i = 0; i < out.length(); i++)
     {
@@ -40,6 +53,7 @@ public class Rotor
     return out;
   }
 
+  // Returns whether or not c is one of the turnover notches
   public boolean isNotch(char c)
   {
     for (int i = 0; i < notches.length(); i++)
@@ -50,6 +64,8 @@ public class Rotor
     return false;
   }
 
+  // Useful for the Enigma class, offsets a char in a circular fashion by a
+  //    specified amount. i.e. offset('A', 2) = 'C' and offset('Z', 3) = 'C'
   public static char offset(char start, int shift)
   {
     if (shift > 0)
@@ -68,6 +84,7 @@ public class Rotor
     }
   }
 
+  // Output of the rotor givin its ringSetting
   public char output(char in, int ringSetting)
   {
     char alphChar = offset(in, -(ringSetting-1));
@@ -75,23 +92,11 @@ public class Rotor
     return offset(in, offset);
   }
 
+  // Same as above, but for traversing in reverse direction
   public char revOutput(char in, int ringSetting)
   {
     char alphChar = offset(in, -(ringSetting-1));
     int offset = revOut.charAt((int)(alphChar)-65)-alphChar;
     return offset(in, offset);
-  }
-
-  public static void main(String[] args)
-  {
-    // for (int rs = 1; rs <= 26; rs++)
-    // {
-    //   for (char c = 65; c <= 90; c++)
-    //   {
-    //     System.out.print(III.revOutput(c, rs));
-    //   }
-    //   System.out.println();
-    // }
-    // System.out.println(III.revOut);
   }
 }

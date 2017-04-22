@@ -1,3 +1,10 @@
+/* Project Title: Enigma
+* Description: This emulates the Enigma machine, using all of its components.
+*
+* Created by: Isaac Newell
+* Date: 04/22/2017
+*/
+
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,11 +15,14 @@ public class Enigma
   private Reflector reflector;
   private Plugboard plugboard;
 
+  // Characters showing through window at top of rotor
   private char[] tops;
   private int[] ringSettings;
 
+  // Size of blocks of output text: i.e. BXQJ LMCQ OIEE
   private int blockSize = 4;
 
+  // All the components are set after initialization
   public Enigma(int numRotors)
   {
     rotors = new Rotor[numRotors];
@@ -47,26 +57,30 @@ public class Enigma
     this.tops = tops;
   }
 
+  // Carries out rotor turnover with double-stepping
   public void step()
   {
     int rotorIndex = rotors.length-1;
+    // Traverse right to left through rotors
     while (rotorIndex >= 0)
     {
+      // Implement a step of the current rotor
       if (tops[rotorIndex] != 'Z')
         tops[rotorIndex] ++;
       else
         tops[rotorIndex] = 'A';
-
+      // If current rotor is passing a turnover notch, move left and keep going
       if (rotors[rotorIndex].isNotch(tops[rotorIndex]))
         rotorIndex --;
+      // If not, check for double-stepping
       else
       {
         if (rotorIndex > 0)
         {
+          // If rotor to the left is at its turnover notch,
+          // then turn it over and keep going
           if (rotors[rotorIndex-1].isNotch(Rotor.offset(tops[rotorIndex-1], 1)))
             rotorIndex --;
-          // if (tops[rotorIndex-1] == Rotor.offset(rotors[rotorIndex-1].getNotch(), -1))
-          //   rotorIndex --;
           else
             break;
         }
@@ -74,33 +88,27 @@ public class Enigma
           break;
       }
     }
-    // for (char c : tops)
-    // {
-    //   System.out.print(c);
-    // }
-    // System.out.println();
   }
 
+  // Returns the output after a forward pass through the rotors (right to left)
   public char forwardRotors(char input)
   {
     int rotorIndex = rotors.length-1;
-    // char rotorInput = Rotor.offset(input, (int)(tops[rotorIndex]-65));
-    // char rotorOutput = rotors[rotorIndex].output(rotorInput, ringSettings[rotorIndex]);
-    // rotorIndex--;
     char current = input;
     while (rotorIndex >= 0)
     {
+      // Shift given current rotor position
       current = Rotor.offset(current, (int)(tops[rotorIndex]-65));
-      // System.out.println("input: " + current);
-      // System.out.println(rotors[rotorIndex].out());
+      // Now calclate output given ringsetting
       current = rotors[rotorIndex].output(current, ringSettings[rotorIndex]);
-      // System.out.println("output: " + current);
+      // Shift back (for moving to the next rotor)
       current = Rotor.offset(current, (int)(65-tops[rotorIndex]));
       rotorIndex--;
     }
     return current;
   }
 
+  // Returns the output after a backward pass through the rotors (left to right)
   public char backwardRotors(char input)
   {
     int rotorIndex = 0;
@@ -115,10 +123,13 @@ public class Enigma
     return current;
   }
 
+  // Encrypts a single character
   public char encrypt(char input)
   {
+    // Steps first
     step();
     char current = input;
+    // Passes through all these components
     current = plugboard.output(current);
     current = forwardRotors(current);
     current = reflector.output(current);
@@ -127,6 +138,7 @@ public class Enigma
     return current;
   }
 
+  // Encrypts a whole string
   public String encrypt(String message)
   {
     String cyphertext = "";
@@ -134,12 +146,15 @@ public class Enigma
     for (int i = 0; i < message.length(); i++)
     {
       char next = message.charAt(i);
+      // Accounts for lower case
       if (next >= 97 && next <= 122)
         next -= 32;
+      // Only takes in letter chars
       if (next >= 65 && next <= 90)
       {
         cyphertext += String.valueOf(encrypt(next));
         count++;
+        // Inserts spaces every blockSize for readability
         if (count % blockSize == 0)
           cyphertext += " ";
       }
@@ -147,6 +162,8 @@ public class Enigma
     return cyphertext;
   }
 
+  // Parses command line input for setup parameters, then encrypts
+  //    or decrypts your message
   public static void main(String[] args)
   {
     Scanner kb = new Scanner(System.in);
@@ -311,18 +328,5 @@ public class Enigma
     System.out.println(enigma.encrypt(text));
 
     kb.close();
-
-    // for (char c : enigma.tops)
-    // {
-    //   System.out.print(c + " ");
-    // }
-    // System.out.println();
-
-    // String message = "AAAAA";
-    // for (int i = 0; i < message.length(); i++)
-    // {
-    //   System.out.print(enigma.encrypt(message.charAt(i)));
-    // }
-    // System.out.println();
   }
 }
