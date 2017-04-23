@@ -1,3 +1,10 @@
+/* Project Title: Enigma
+* Description: Outputs randomly generated Enigma keys into a text file
+*
+* Created by: Isaac Newell
+* Date: 04/22/2017
+*/
+
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
@@ -12,6 +19,7 @@ import java.util.Calendar;
 
 public class SettingGenerator
 {
+  // Selects the rotor order
   public static String rotors()
   {
     String[] ws = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII"};
@@ -27,12 +35,14 @@ public class SettingGenerator
       int index = (int)(Math.random()*choices.size());
       output += choices.get(index);
       if (i != 3) output += " ";
+      // Removes each choice because there can be no duplicates
       choices.remove(index);
     }
 
     return output;
   }
 
+  // Randomly selects a reflector
   public static String reflector()
   {
     String[] choices = {"A", "B", "C"};
@@ -40,6 +50,7 @@ public class SettingGenerator
     return choices[index];
   }
 
+  // Randomly selects ring settings
   public static String ringSettings()
   {
     String output = "";
@@ -55,6 +66,7 @@ public class SettingGenerator
     return output;
   }
 
+  // Randomly selects ground settings (start positions)
   public static String groundSettings()
   {
     String output = "";
@@ -68,6 +80,7 @@ public class SettingGenerator
     return output;
   }
 
+  // Randomly selects plugboard settings
   public static String plugs()
   {
     ArrayList<String> choices = new ArrayList<String>(26);
@@ -80,8 +93,10 @@ public class SettingGenerator
 
     for (int i = 1; i <= 10; i++)
     {
+      // Current pair of letters
       String pair = "";
 
+      // Randomly pick two distinct letters to pair and remove them from choices
       int index1 = (int)(Math.random() * choices.size());
       pair += choices.get(index1);
       choices.remove(index1);
@@ -90,8 +105,11 @@ public class SettingGenerator
       pair += choices.get(index2);
       choices.remove(index2);
 
+      //Add a space
       pair += " ";
 
+      // Insert the pair into plugs alphabetically by first character
+      //    (i.e. AP BQ DM ...)
       boolean inserted = false;
       for (int j = 0; j < plugs.length(); j += 3)
       {
@@ -102,6 +120,7 @@ public class SettingGenerator
           break;
         }
       }
+      // If no spot in the middle put at the end
       if (!inserted)
       {
         plugs += pair;
@@ -111,6 +130,8 @@ public class SettingGenerator
     return plugs.substring(0, plugs.length()-1);
   }
 
+  // Uses commandline input to generate settings for a speficied number of
+  //    days to a specified text file
   public static void main(String[] args)
   {
     Scanner kb = new Scanner(System.in);
@@ -142,6 +163,7 @@ public class SettingGenerator
 
       for (int day = 1; day <= numDays; day++)
       {
+        // Puts the proper date stamp on each key
         date = dateFormat.format(cal.getTime());
         pw.println("Day " + day + " (" + date + ")");
         pw.println("Rotors:    " + rotors());
