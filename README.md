@@ -1,5 +1,5 @@
 # enigma
-This is a Java implementation of the German Enigma cypher machine used during WWII. The Enigma created a complex polyalphabetic substitution cypher via an elelectromechanical method. The user would input a key, which would be carried as an electrical current through a series of components, resulting in a different letter appearing on the lampboard. Enigma operators would transcribe this output and transmit it using Morse code. 
+This is a Java implementation of the German Enigma cypher machine used during WWII. The Enigma created a complex polyalphabetic substitution cypher via an elelectromechanical method. The user would input a key, which would be carried as an electrical current through a series of components, resulting in a different letter appearing on the lampboard. Enigma operators would transcribe this output and transmit it using Morse code.
 
 ## After pressing a key, the electrical path goes through **these following components**:
 * **The plugboard**: Set by the operator, the plugboard swaps specified letter pairs. Typically, 10 pairs would be swapped.
