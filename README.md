@@ -5,7 +5,7 @@ This is a Java implementation of the German Enigma cypher machine used during WW
 * **The plugboard**: Set by the operator, the plugboard swaps specified letter pairs. Typically, 10 pairs would be swapped.
 * **The rotors**: Army Enigmas had three rotors, Navy Enigmas had four. Each had a specific wiring which mapped each letter to a different one. Placing rotors in series led to a constantly changing way to encypher each letter. Each rotor had electrical contacts on both sides, connected internally by its wiring.
   * *Rotor turnover*: Enigma rotors moved like an odometer, with a small but significant twist. After every key press, the right rotor moved by one increment. Each rotor had a set turnover spot, at which point it would trigger the next rotor (like an odometer). However, so-called "double stepping" complicated this. If a rotor turned and the rotor to its left was at turnover notch, it would trigger the left rotor.
-* **The reflector**: The reflector took and input electrical signal and refleced back as a different letter.
+* **The reflector**: The reflector took an input electrical signal and refleced it back as a different letter.
 
 ## Encryption is the same as decryption
 After passing through the reflector, the electrical path went back through the rotors, then the plugboard, then to the lampboard. This feature allowed encryption to be the same as decryption. As long as the Enigma decoding cyphertext is setup the same way as the Enigma that encrypted it, it will output the original plaintext.
