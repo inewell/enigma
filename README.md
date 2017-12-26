@@ -16,7 +16,10 @@ After passing through the reflector, the electrical path went back through the r
 * **Rotor start positions**: The initial orientations of the rotors (which letters show in the window in the top of the machine).
 * **Plugboard pairs**: Pairs to be swapped in the plugboard (this added the largest contribution to the number of possibile confiurations, making brute force decryption techniques impossible).
 
-## How this program works
-This repository includes Java classes representing each Enigma component (Rotor, Reflector, and Plugboard). Enigma.java is what you should run, as it puts these components together to perform the encryption. It takes command line input.
+## Table of Contents
+This repository includes Java classes representing each Enigma component (Rotor, Reflector, and Plugboard). `Enigma.java` is what you should run, as it puts these components together to perform the encryption. It takes command line input.
 
-The file SettingGenerator.java creates random Enigma keys for a specified number of days, and saves them to a text file that you specify in the command line.
+The file `SettingGenerator.java` creates random Enigma keys for a specified number of days, and saves them to a text file that you specify in the command line.
+
+## Authors
+* Isaac Newell
